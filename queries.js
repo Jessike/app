@@ -10,9 +10,13 @@
     }
   });
 
-
-
-  
-  module.exports = {
+  const createUse = async (email, hash) => {
+    const result = await knex('users').insert({email: email, hash: hash});
     
+    return result;
+  };
+
+
+  module.exports = {
+    createUse
   }
