@@ -22,15 +22,19 @@
     return result;
   };
 
-  const insertGoal = async (fat, protein, carbs) => {
-    const result = await knex('goals').insert({fat: fat, protein: protein, carbs: carbs});
-    
+  const insertGoal = async (fat, protein, carbs, userId) => {
+    const result = await knex('goals').insert({fat: fat, protein: protein, carbs: carbs, userId: userId});
     return result;
   }
 
+  const getUser = async (email) => {
+    const result = await knex('users').where('email', email);
+    return result[0];
+  };
 
   module.exports = {
     createUse,
     insertFood,
-    insertGoal
+    insertGoal,
+    getUser
   }
