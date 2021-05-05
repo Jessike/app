@@ -15,8 +15,15 @@
     
     return result;
   };
+
   const insertFood = async (name, fat, protein, carbs) => {
     const result = await knex('food').insert({name: name, fat: fat, protein: protein, carbs: carbs});
+    
+    return result;
+  };
+
+  const insertGoal = async (fat, protein, carbs) => {
+    const result = await knex('goals').insert({fat: fat, protein: protein, carbs: carbs});
     
     return result;
   }
@@ -24,5 +31,6 @@
 
   module.exports = {
     createUse,
-    insertFood
+    insertFood,
+    insertGoal
   }
