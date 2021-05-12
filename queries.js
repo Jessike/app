@@ -33,6 +33,17 @@ const getFoods = async (keyword) => {
   return result;
 };
 
+const foodForUser = async ({fat, protein, carbs, name}, amount, userId) => {
+  const result = await knex('user_food')
+      .insert({name, amount, userId, fat, protein, carbs});
+  return result;
+};
+
+const searchFoodByName = async (name) => {
+  const result = await knex('food').where('name', name);
+  return result[0];
+};
+
 module.exports = {
   knex,
   createUse,
@@ -41,4 +52,6 @@ module.exports = {
   getUser,
   searchFoodById,
   getFoods,
+  foodForUser,
+  searchFoodByName,
 };

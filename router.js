@@ -10,6 +10,8 @@ const {login} = require('./routes/login');
 const {logout} = require('./routes/logout');
 const {getFood} = require('./routes/get-food');
 const {searchFood} = require('./routes/search-food'); 1;
+const {userFood} = require('./routes/post-userfood');
+const {userMacros} = require('./routes/post-userMacros');
 
 const {isUserAuthenticated} = require('./middleware/session-middleware');
 const {requireLogin} = require('./middleware/require-login');
@@ -35,11 +37,14 @@ router.post('/login', login);
 router.get('/food/:id', getFood);
 router.get('/food/search/:keyword', searchFood);
 
+
 router.use(isUserAuthenticated);
 router.use(requireLogin);
 
 router.post('/goal', createGoal);
 router.get('/logout', logout);
+router.post('/user/food', userFood);
+router.post('/user/macros', userMacros);
 
 
 module.exports = router;
