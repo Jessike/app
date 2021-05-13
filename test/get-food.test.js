@@ -5,7 +5,8 @@ const chaiHttp = require('chai-http');
 const server = require('../app');
 const knex = require('../knex');
 chai.use(chaiHttp);
-
+// eslint-disable-next-line no-unused-vars
+const should = chai.should();
 
 describe('API Routes', function() {
   beforeEach(function(done) {

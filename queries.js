@@ -18,6 +18,11 @@ const insertGoal = async (fat, protein, carbs, userId) => {
   return result;
 };
 
+const getGoal = async (userId) => {
+  const result = knex('goals').where('userId', userId);
+  return result;
+};
+
 const getUser = async (email) => {
   const result = await knex('users').where('email', email);
   return result[0];
@@ -44,6 +49,12 @@ const searchFoodByName = async (name) => {
   return result[0];
 };
 
+const searchFoodByDate = async (date) => {
+  const result = await knex('user_food')
+      .where('created_at', '=', date);
+  return result;
+};
+
 module.exports = {
   knex,
   createUse,
@@ -54,4 +65,6 @@ module.exports = {
   getFoods,
   foodForUser,
   searchFoodByName,
+  searchFoodByDate,
+  getGoal,
 };
