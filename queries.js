@@ -14,7 +14,7 @@ const insertFood = async (name, fat, protein, carbs) => {
 
 const insertGoal = async (fat, protein, carbs, userId) => {
   const result = await knex('goals')
-      .insert({fat: fat, protein: protein, carbs: carbs, userId: userId});
+      .insert({fat, protein, carbs, userId}).returning('*');
   return result;
 };
 
@@ -40,7 +40,7 @@ const getFoods = async (keyword) => {
 
 const foodForUser = async ({fat, protein, carbs, name}, amount, userId) => {
   const result = await knex('user_food')
-      .insert({name, amount, userId, fat, protein, carbs});
+      .insert({name, amount, userId, fat, protein, carbs}).returning('*');
   return result;
 };
 
