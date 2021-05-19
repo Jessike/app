@@ -8,6 +8,7 @@ const createFood = async (req, res) => {
 
   try {
     const food = await insertFood(name, fat, protein, carbs);
+
     res.status(200).json(food);
   } catch (error) {
     res.status(500).send();

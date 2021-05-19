@@ -12,6 +12,7 @@ const isUserAuthenticated = async (req, res, next) => {
     // finishing processing the middleware and run the route
     next();
   } else {
+    console.log('ohno');
     next();
   }
 };

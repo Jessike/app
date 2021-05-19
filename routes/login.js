@@ -12,6 +12,7 @@ const login = async (req, res) => {
       req.session.user = user;
       req.user = user;
       delete req.user.hash;
+
       res.status(200).send();
     } else {
       res.status(404).send('not the right pssword');

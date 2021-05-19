@@ -8,7 +8,7 @@ const createUse = async (email, hash) => {
 
 const insertFood = async (name, fat, protein, carbs) => {
   const result = await knex('food')
-      .insert({name: name, fat: fat, protein: protein, carbs: carbs});
+      .insert({name, fat, protein, carbs}).returning('*');
   return result;
 };
 
@@ -49,9 +49,9 @@ const searchFoodByName = async (name) => {
   return result[0];
 };
 
-const searchFoodByDate = async (date) => {
+const searchFoodByDate = async (date, userId) => {
   const result = await knex('user_food')
-      .where('created_at', '=', date);
+      .where('created_at', '=', date/*  && 'userId', userId */);
   return result;
 };
 

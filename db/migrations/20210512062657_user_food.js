@@ -7,9 +7,10 @@ exports.up = function(knex, Promise) {
     table.integer('carbs');
     table.integer('calories');
     table.integer('amount');
-    table.timestamp('created_at').defaultTo(knex.fn.now());
-    table.timestamp('updated_at').defaultTo(knex.fn.now());
-    table.bigInteger('userId').references('id').inTable('users');
+    table.datetime('created_at').defaultTo(knex.fn.now());
+    table.datetime('updated_at').defaultTo(knex.fn.now());
+    table.string('name').notNullable();
+    table.integer('userId').references('id').inTable('users');
   });
 };
   
