@@ -51,7 +51,7 @@ const searchFoodByName = async (name) => {
 
 const searchFoodByDate = async (date, userId) => {
   const result = await knex('user_food')
-      .where('created_at', '=', date/*  && 'userId', userId */);
+      .where('created_at', '=', date).andWhere('userId', userId);
   return result;
 };
 
