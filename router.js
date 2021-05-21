@@ -14,6 +14,8 @@ const {userFood} = require('./routes/post-userfood');
 const {userMacros} = require('./routes/post-userMacros');
 const {getFoodByDate} = require('./routes/get-day');
 const {getCals} = require('./routes/get-remaining');
+const {updateFood} = require('./routes/put-userFood');
+const {deleteFood} = require('./routes/delete-userFood');
 
 const {isUserAuthenticated} = require('./middleware/session-middleware');
 const {requireLogin} = require('./middleware/require-login');
@@ -49,5 +51,7 @@ router.post('/user/food', userFood);
 router.post('/user/macros', userMacros);
 router.get('/user/day/:date', getFoodByDate);
 router.get('/user/goal/:date', getCals);
+router.put('/user/food/:id', updateFood);
+router.delete('/user/food/:id', deleteFood);
 
 module.exports = router;

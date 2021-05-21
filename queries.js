@@ -1,5 +1,6 @@
 
 const knex = require('./knex');
+const {getAsync, setAsync, delAsync} = require('./cache');
 
 const createUse = async (email, hash) => {
   const result = await knex('users').insert({email, hash}).returning('*');
@@ -29,8 +30,14 @@ const getUser = async (email) => {
 };
 
 const searchFoodById = async (id) => {
-  const result = await knex('food').where('id', id);
-  return result[0];
+  let value = await getAsync(id);
+  console.log(value);
+  value = value !== 'undefined' && JSON.parse(value) || null;
+  if (!value) {
+    value = await knex('food').where('id', id);
+    await setAsync(id, JSON.stringify(value), 'EX', 3600);
+  }
+  return value[0];
 };
 
 const getFoods = async (keyword) => {
@@ -51,9 +58,34 @@ const searchFoodByName = async (name) => {
 
 const searchFoodByDate = async (date, userId) => {
   const result = await knex('user_food')
-      .where('created_at', '=', date).andWhere('userId', userId);
+      .where('created_at', '=', date)/* .andWhere('userId', userId) */;
+  console.log(result);
   return result;
 };
+
+const updateUserFood =
+async (id, name, amount, fat, protein, carbs, userId) => {
+  console.log(id);
+  console.log(userId);
+  const result = await knex('user_food')
+      .where('id', id).andWhere('userId', userId)
+      .update({name, amount, fat, protein, carbs}).returning('*');
+
+  await delAsync(id);
+
+  return result;
+};
+
+const deleteUserFood =
+ async (id, userId) => {
+   const result = await knex('user_food')
+       .where('id', id).andWhere('userId', userId)
+       .del();
+
+   await delAsync(id);
+
+   return result;
+ };
 
 module.exports = {
   knex,
@@ -67,4 +99,6 @@ module.exports = {
   searchFoodByName,
   searchFoodByDate,
   getGoal,
+  updateUserFood,
+  deleteUserFood,
 };
