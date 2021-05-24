@@ -1,4 +1,4 @@
-const {getFoods} = require('./../queries');
+const {getFoods} = require('./../model/food-model');
 
 const searchFood = async (req, res) => {
   const name = req.params.keyword;

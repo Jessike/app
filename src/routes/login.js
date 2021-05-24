@@ -1,5 +1,5 @@
-const {getUser} = require('./../queries');
-const {comparePassword} = require('./../hashing');
+const {getUser} = require('./../model/user-model');
+const {comparePassword} = require('./../utils/hashing');
 
 const login = async (req, res) => {
   const user = await getUser(req.body.email);

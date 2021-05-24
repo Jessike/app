@@ -1,5 +1,5 @@
-const {searchFoodByDate} = require('./../queries');
-const {logger} = require('./../logger');
+const {searchFoodByDate} = require('./../model/userfood-model');
+const {logger} = require('./../utils/logger');
 
 const getFoodByDate = async (req, res) => {
   const date = req.params.date;

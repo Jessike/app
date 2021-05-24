@@ -1,4 +1,5 @@
-const {searchFoodByDate, getGoal} = require('../queries');
+const {searchFoodByDate} = require('./../model/userfood-model');
+const {getGoal} = require('./../model/goals-model');
 const calories = require('../utils/food-stats');
 
 const getCals = async (req, res) => {

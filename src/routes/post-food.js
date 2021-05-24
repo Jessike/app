@@ -1,4 +1,4 @@
-const {insertFood} = require('./../queries');
+const {insertFood} = require('./../model/food-model');
 
 const createFood = async (req, res) => {
   const name = req.body.name;

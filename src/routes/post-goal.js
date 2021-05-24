@@ -1,4 +1,4 @@
-const {insertGoal} = require('./../queries');
+const {insertGoal} = require('./../model/goals-model');
 
 const createGoal = async (req, res) => {
   const fat = req.body.fat;

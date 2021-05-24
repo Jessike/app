@@ -1,4 +1,4 @@
-const {deleteUserFood} = require('./../queries');
+const {deleteUserFood} = require('./../model/userfood-model');
 
 const deleteFood = async (req, res) => {
   const id = req.params.id;

@@ -1,4 +1,4 @@
-const {foodForUser} = require('./../queries');
+const {foodForUser} = require('./../model/userfood-model');
 
 const userMacros = async (req, res) => {
   const {name, fat, protein, carbs} = req.body;

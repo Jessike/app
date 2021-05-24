@@ -1,5 +1,5 @@
-const {createUse} = require('./../queries');
-const {hashPassword} = require('./../hashing');
+const {createUse} = require('./../model/user-model');
+const {hashPassword} = require('./../utils/hashing');
 
 const createUser = async (req, res) => {
   const hash = await hashPassword(req.body.password);

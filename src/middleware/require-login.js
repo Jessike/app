@@ -1,4 +1,4 @@
-const {logger} = require('../logger');
+const {logger} = require('./../utils/logger');
 
 const requireLogin = (req, res, next) => {
   if (!req.user) {

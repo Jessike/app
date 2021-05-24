@@ -1,4 +1,5 @@
-const {foodForUser, searchFoodByName} = require('./../queries');
+const {foodForUser} = require('./../model/userfood-model');
+const {searchFoodByName} = require('./../model/food-model');
 
 const userFood = async (req, res) => {
   const {name, amount} = req.body;

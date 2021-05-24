@@ -1,5 +1,5 @@
-const {searchFoodById} = require('./../queries');
-const {logger} = require('./../logger');
+const {searchFoodById} = require('./../model/food-model');
+const {logger} = require('./../utils/logger');
 const getFood = async (req, res) => {
   const id = req.params.id;
 

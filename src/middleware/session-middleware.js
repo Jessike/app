@@ -1,4 +1,4 @@
-const {getUser} = require('./../queries');
+const {getUser} = require('./../model/user-model');
 
 const isUserAuthenticated = async (req, res, next) => {
   if (req.session && req.session.user) {

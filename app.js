@@ -1,8 +1,8 @@
 const express = require('express');
-const routes = require('./router');
+const routes = require('./src/router');
 const app = express();
 const port = 3000;
-const {expressLogger, logger} = require('./logger');
+const {expressLogger, logger} = require('./src/utils/logger');
 
 
 app.use(expressLogger);

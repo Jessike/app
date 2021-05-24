@@ -1,4 +1,4 @@
-const {updateUserFood} = require('../queries');
+const {updateUserFood} = require('./../model/userfood-model');
 
 const updateFood = async (req, res) => {
   const id = req.params.id;
