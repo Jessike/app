@@ -7,69 +7,113 @@
         <meta name="author" content="Jessike Koort">
         <link href="https://fonts.googleapis.com/css?family=Poppins:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i&display=swap" rel="stylesheet">
 
-        <title>Food Tracking</title>
+        <title>TrackYoCals</title>
 
         <!-- Additional CSS Files -->
         <!-- CSS only -->
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
-        <!-- JavaScript Bundle with Popper -->
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous"></script>
+        <!-- Google fonts-->
+        <link href="https://fonts.googleapis.com/css?family=Merriweather+Sans:400,700" rel="stylesheet" />
+        <link href="https://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic" rel="stylesheet" type="text/css" />
+        <!-- SimpleLightbox plugin CSS-->
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/SimpleLightbox/2.1.0/simpleLightbox.min.css" rel="stylesheet" />
 
-        <link rel="stylesheet" type="text/css" href="assets/css/font-awesome.css">
-
-        <link rel="stylesheet" href="assets/css/templatemo-training-studio.css">
+        <link rel="stylesheet" href="front/css/style.css">
     </head>
-    <body>
-        <!-- ***** Preloader Start ***** -->
-    <div id="js-preloader" class="js-preloader">
-        <div class="preloader-inner">
-          <span class="dot"></span>
-          <div class="dots">
-            <span></span>
-            <span></span>
-            <span></span>
-          </div>
-        </div>
-      </div>
-      <!-- ***** Preloader End ***** -->
-      
-      
-      <!-- ***** Header Area Start ***** -->
-      <header class="header-area header-sticky">
-          <div class="container">
-              <div class="row">
-                  <div class="col-12">
-                      <nav class="main-nav">
-                          <!-- ***** Logo Start ***** -->
-                          <a href="index.html" class="logo">Training<em> Studio</em></a>
-                          <!-- ***** Logo End ***** -->
-                          <!-- ***** Menu Start ***** -->
-                          <ul class="nav">
-                              <li class="scroll-to-section"><a href="#top" class="active">Home</a></li>
-                              <li class="scroll-to-section"><a href="#features">About</a></li>
-                              <li class="scroll-to-section"><a href="#our-classes">Classes</a></li>
-                              <li class="scroll-to-section"><a href="#schedule">Schedules</a></li>
-                              <li class="scroll-to-section"><a href="#contact-us">Contact</a></li> 
-                              <li class="main-button"><a href="#">Sign Up</a></li>
-                          </ul>        
-                          <a class='menu-trigger'>
-                              <span>Menu</span>
-                          </a>
-                          <!-- ***** Menu End ***** -->
-                      </nav>
-                  </div>
-              </div>
-          </div>
-      </header>
-      <!-- ***** Header Area End ***** -->
+    <body id="page-top">
+        <!-- Navigation-->
+        <nav class="navbar navbar-expand-lg navbar-light fixed-top py-3" id="mainNav">
+            <div class="container px-4 px-lg-5">
+                <a class="navbar-brand" href="#page-top">Track Yo Cals</a>
+                <button class="navbar-toggler navbar-toggler-right" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+                <div class="collapse navbar-collapse" id="navbarResponsive">
+                    <ul class="navbar-nav ms-auto my-2 my-lg-0">
+                        <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+                        <li class="nav-item"><a class="nav-link" href="front/login.html">Log in</a></li>
+                        <li class="nav-item"><a class="nav-link" href="front/signup.html">Sign up</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
 
-
-
-
-    <!-- jQuery -->
-    <script src="assets/js/jquery-2.1.0.min.js"></script>
-
-    <!-- Global Init -->
-    <script src="assets/js/custom.js"></script>
+        <!-- Masthead-->
+        <header class="masthead">
+            <div class="container px-4 px-lg-5 h-100">
+                <div class="row gx-4 gx-lg-5 h-100 align-items-center justify-content-center text-center">
+                    <div class="col-lg-8 align-self-end">
+                        <h1 class="text-white font-weight-bold">Start Tracking</h1>
+                        <hr class="divider" />
+                    </div>
+                    <div class="col-lg-8 align-self-baseline">
+                        <p class="text-white-75 mb-5">Take control of your goals. Track calories, break down ingredients, and log activities with TrackYoCals.</p>
+                        <a class="btn btn-primary btn-xl" href="front/signup.html">Sign up</a>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <!-- About-->
+        <section class="page-section bg-primary" id="about">
+            <div class="container px-4 px-lg-5">
+                <div class="row gx-4 gx-lg-5 justify-content-center">
+                    <div class="col-lg-8 text-center">
+                        <h2 class="text-white mt-0">We've got what you need!</h2>
+                        <hr class="divider divider-light" />
+                        <p class="text-white-75 mb-4">
+                            Fitness starts with what you eat.<br>
+                            Trying to lose weight, tone up, lower your BMI, or invest in your overall health? We give you the right features to hit your goals.
+                        </p>
+                        <a class="btn btn-light btn-xl" href="front/signup.html">Get Started!</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Services-->
+        <section class="page-section" id="services">
+            <div class="container px-4 px-lg-5">
+                <h2 class="text-center mt-0">At Your Service</h2>
+                <hr class="divider" />
+                <div class="row gx-4 gx-lg-5">
+                    <div class="col-lg-3 col-md-6 text-center">
+                        <div class="mt-5">
+                            <div class="mb-2"><i class="bi-gem fs-1 text-primary"></i></div>
+                            <h3 class="h4 mb-2">Set Goals</h3>
+                            <p class="text-muted mb-0">You can set your ideal calorie intake that keeps you on track.</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6 text-center">
+                        <div class="mt-5">
+                            <div class="mb-2"><i class="bi-laptop fs-1 text-primary"></i></div>
+                            <h3 class="h4 mb-2">Search Foods</h3>
+                            <p class="text-muted mb-0">You can save food items and their macros for easier tracking.</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6 text-center">
+                        <div class="mt-5">
+                            <div class="mb-2"><i class="bi-globe fs-1 text-primary"></i></div>
+                            <h3 class="h4 mb-2">Stay Motivated</h3>
+                            <p class="text-muted mb-0">Track your progress and find out exactly what works for you.</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6 text-center">
+                        <div class="mt-5">
+                            <div class="mb-2"><i class="bi-heart fs-1 text-primary"></i></div>
+                            <h3 class="h4 mb-2">Made with Love</h3>
+                            <p class="text-muted mb-0">Enjoy the foods you eat and have fun.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Footer-->
+        <footer class="bg-light py-5">
+            <div class="container px-4 px-lg-5"><div class="small text-center text-muted">Copyright &copy; 2021 - Jessike Koort</div></div>
+        </footer>
+        <!-- Bootstrap core JS-->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"></script>
+        <!-- SimpleLightbox plugin JS-->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/SimpleLightbox/2.1.0/simpleLightbox.min.js"></script>
+        <!-- Core theme JS-->
+        <script src="front/js/scripts.js"></script>
     </body>
 </html>
