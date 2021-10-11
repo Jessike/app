@@ -1,0 +1,45 @@
+body {
+	background-image: url(../img/foodbg.jpg);
+	background-size: cover;
+}
+.registerText {
+	color: white;
+	font-size: 20px;
+}
+
+.link {
+	color: #a5fd93;
+}
+
+.link:hover {
+	color: #e84a5f;
+	text-decoration: underline;
+}
+
+label {
+	color: white;
+}
+
+.form-control {
+	margin-bottom: 10px;
+	width: 90%;
+}
+
+.signupbtn {
+	margin: 20px;
+	background-color: #4ae899;
+	color: blue;
+}
+
+.signupbtn:hover {
+	background-color: white;
+	color: #46c75b;
+	border: 1px solid #4ae891;
+}
+#loginForm {
+	margin: 50px;
+	padding: 50px;
+	background-color: transparent;
+	border-radius: 12px;
+	width: 80%;
+}

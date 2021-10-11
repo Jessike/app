@@ -10,9 +10,9 @@ services:
       DATABASE_URL: postgres://me:password@postgres:5432/foodApp
       REDIS_URL: redis://cache
       NODE_ENV: development
-      PORT: 3000
+      PORT: 8080
     ports:
-      - "3000:3000"
+      - "8080:8080"
     command: sh -c 'npm run db && npm run start'
     volumes:
       - .:/app/

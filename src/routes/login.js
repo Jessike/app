@@ -1,21 +1,40 @@
+const jwt = require("jsonwebtoken");
+const keys = require("../../config/keys");
 const {getUser} = require('./../model/user-model');
 const {comparePassword} = require('./../utils/hashing');
 
-const login = async (req, res) => {
-  const user = await getUser(req.body.email);
 
+const login = async (req, res) => {
+  console.log(req.body);
+  const user = await getUser(req.body.email);
+console.log(user);
   if (!user) {
     res.status(404).send('not valid');
   } else {
     if (await comparePassword(req.body.password, user.hash)) {
-      // sets a cookie with the user's info
-      req.session.user = user;
-      req.user = user;
-      delete req.user.hash;
 
-      res.status(200).send();
+      const payload = {
+        id: user.id,
+        name: user.name
+      };
+
+      // Sign token
+      jwt.sign(
+        payload,
+        keys.secretOrKey,
+        {
+          expiresIn: 31556926 // 1 year in seconds
+        },
+        (err, token) => {
+          res.json({
+            success: true,
+            token: "Bearer " + token
+          });
+        }
+      );
+
     } else {
-      res.status(404).send('not the right pssword');
+      res.status(404).send('not the right password');
     }
   }
 };

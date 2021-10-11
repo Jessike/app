@@ -35,7 +35,7 @@ router.use(session({
 }));
 
 
-router.post('/users', createUser);
+router.post('/user', createUser);
 router.post('/food', createFood);
 router.post('/login', login);
 router.get('/food/:id', getFood);

@@ -1,8 +1,8 @@
 
 const knex = require('../knex');
 
-const createUse = async (email, hash) => {
-  const result = await knex('users').insert({email, hash}).returning('*');
+const createUse = async (name, email, hash) => {
+  const result = await knex('users').insert({name, email, hash}).returning('*');
   return result[0];
 };
 
